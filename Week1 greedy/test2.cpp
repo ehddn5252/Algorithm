@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 // 날짜 : 20201030  
 // 작성자 : 김동우 
-// 걸린 시간 : 06:41
+// 걸린 시간 : 30:00
 using namespace std;
 
 int main(void){
@@ -16,10 +16,6 @@ int main(void){
 		P.push_back(b);
 		V.push_back(c);
 		answer.push_back(0);
-		
-		cout<<a<<endl;
-		cout<<b<<endl;
-		cout<<c<<endl;
 	}
 	for (int i=0;i<L.size();++i){
 		answer[i]+=(V[i]/P[i])*L[i];
@@ -32,7 +28,7 @@ int main(void){
 	}
 	
 	for(int i=0;i<answer.size();++i){
-		cout<<answer[i];
+		cout<<"Case "<<(i+1)<<": "<<answer[i]<<endl;
 	}
 		
 	return 0;
