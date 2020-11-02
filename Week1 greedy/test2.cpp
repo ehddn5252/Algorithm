@@ -1,35 +1,35 @@
 #include <bits/stdc++.h>
-// 날짜 : 20201030  
-// 작성자 : 김동우 
-// 걸린 시간 : 30:00
+
 using namespace std;
 
+bool compare(pair<int,int> a,pair<int,int> b){
+	return a.first<b.first;
+}
+
 int main(void){
-	vector<int> L,P,V,answer;
-	int a,b,c=2;
-	for (;;){
-		cin>>a>>b>>c;
-		if (a==0&&b==0&&c==0){
-			break;
+	int T,N,tmp1,tmp2,bound=0,answer=0;
+	vector<int> answerList;
+	cin>>T;
+	for(int i=0;i<T;++i){
+		cin>>N;
+		answer=N;
+		pair<int,int> p1[N];
+		for(int j=0;j<N;++j){
+			cin>>tmp1>>tmp2;
+			p1[j]=make_pair(tmp1,tmp2);
 		}
-		L.push_back(a);
-		P.push_back(b);
-		V.push_back(c);
-		answer.push_back(0);
-	}
-	for (int i=0;i<L.size();++i){
-		answer[i]+=(V[i]/P[i])*L[i];
-		if(L[i]>V[i]%P[i]){
-			answer[i]+=V[i]%P[i];
+		sort(&p1[0],&p1[N],compare);
+		bound=p1[0].second;
+		for(int j=1;j<N;++j){
+			if(p1[j].second>bound) answer--;
+			bound=min(bound,p1[j].second);
+			
 		}
-		else{
-			answer[i]+=L[i];
-		}
+		answerList.push_back(answer);
 	}
-	
-	for(int i=0;i<answer.size();++i){
-		cout<<"Case "<<(i+1)<<": "<<answer[i]<<endl;
+	for(int i=0;i<T;++i){
+		cout<<answerList[i]<<endl;
 	}
-		
+
 	return 0;
 }
