@@ -1,19 +1,15 @@
 #include <bits/stdc++.h>
-// 날짜 : 20201102 11:02
-// 걸린시간 : 26:02
 
 //#define TESTPRINT
 
-
 using namespace std;
 
-
 bool cmp(pair<int,int> p1,pair<int,int> p2){
-	if(p1.second<p2.second){	//끝시간 기준 오름차순 
+	if(p1.second<p2.second){
 		return true;
 	}
 	else if(p1.second==p2.second){
-		return p1.first<=p2.first;//시작 시간 기준 오름차순 
+		return p1.first<=p2.first;
 	}
 	else {
 		return false;
@@ -43,6 +39,7 @@ int main(void){
 	}
 	cout<<"for testprint end===================="<<endl;
 	#endif
+
 	cout<<answer<<endl;
 	return 0;
 }

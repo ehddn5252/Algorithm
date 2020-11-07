@@ -12,8 +12,7 @@ using namespace std;
 
 //#define testprint
 
-
-typedef struct stru1{
+typedef struct stru1{	
 	int test1;
 	int test2;
 }stru1;
@@ -30,12 +29,15 @@ int main(void){
 	int N[T]={0,};
 	int pibot=0;	
 	vector<int> answer;
+	
 	for(int i=0;i<T;++i){
 		cin>>N[i];
 		answer.push_back(N[i]);
+
 		for(int j=0;j<N[i];++j){
 			cin>>a[i][j].test1>>a[i][j].test2;
 		}
+		
 		sort(a[i],a[i]+N[i],cmp);
 		
 		for(int j=1;j<N[i];++j){
@@ -48,6 +50,7 @@ int main(void){
 		}
 		
 	}
+	
 	#ifdef testprint
 	cout<<"for testprint start=================="<<endl;
 	for(int i=0;i<T;++i){

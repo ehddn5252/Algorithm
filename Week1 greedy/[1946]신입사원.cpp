@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-// ¿¾³¯¿¡ Åë°úÇÑ ÄÚµå
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 using namespace std;
 
 bool compare(pair<int,int> a,pair<int,int> b){
