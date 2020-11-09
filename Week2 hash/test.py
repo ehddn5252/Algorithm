@@ -8,9 +8,14 @@
 #           2. 장르 내에서 많이 재생된 노래 먼저 수록
 #           3. 재생 횟수가 같으면 고유 번호가 낮은 순으로 수록
 
-# 시간 복잡도 : O(N^2)
-# 정답 33%  맞음 : 1,2,3,4,15 틀림 : 5,6,7,8,9,10,11,12,13,14 
-# 고민 : 예외가 무엇인지 확인해야 한다.
+# 시간 복잡도 : O(N) (clothes 리스트 검색)
+'''
+genres =  ["classic","classic", "pop", "classic","piano", "classic", "pop","pop","piano"]
+plays = [800,500, 600, 150,100, 800, 2500 ,2500,10000]
+'''
+genres =  ["classic"]
+plays = [1]
+
 def solution(genres, plays):
     answer=[]
     albumList=[]
@@ -51,3 +56,5 @@ def solution(genres, plays):
                 answer.append(albumList[num][2])
                 maxTwoAlbumCheck+=1
     return answer
+
+print(solution(genres,plays))
