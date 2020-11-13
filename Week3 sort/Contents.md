@@ -1,6 +1,14 @@
 목차
+
+[1.국영수](#promblem-1)
+[2.나이순 정렬](#promblem-2)
+[3. K번째 수](#promblem-3)
+[4. 합이 0인 네 정수](#promblem-4)
 #
-1. [10825 국영수](https://www.acmicpc.net/problem/10825)
+
+### promblem1
+
+### [10825 국영수](https://www.acmicpc.net/problem/10825)
 
 
 시간 제한 | 메모리 제한 |	제출 | 정답| 맞은 사람 | 정답 비율
@@ -27,6 +35,7 @@
 출력
 
 문제에 나와있는 정렬 기준으로 정렬한 후 첫째 줄부터 N개의 줄에 걸쳐 각 학생의 이름을 출력한다.
+
 
 <br>
   <h3>예시입력</h3>
@@ -62,8 +71,8 @@ Junkyu
 Soong
 Taewhan
 ```
-#
-2. [10814 나이순 정렬](https://www.acmicpc.net/problem/10814)
+### promblem 2
+### [10814 나이순 정렬](https://www.acmicpc.net/problem/10814)
 
 시간 제한 | 메모리 제한 |	제출 | 정답| 맞은 사람 | 정답 비율
 ------|------|------|------|------|------
@@ -93,8 +102,8 @@ Taewhan
 21 Junkyu
 21 Dohyun
 ```
-
-3. [11004 K번째 수](https://www.acmicpc.net/problem/11004)
+### promblem 3
+### [11004 K번째 수](https://www.acmicpc.net/problem/11004)
 
 시간 제한 | 메모리 제한 |	제출 | 정답| 맞은 사람 | 정답 비율
 ------|------|------|------|------|------
@@ -122,8 +131,8 @@ A를 정렬했을 때, 앞에서부터 K번째 있는 수를 출력한다.
 ```Python
 2
 ```
-
-4. [7453 합이 0인 네 정수](https://www.acmicpc.net/problem/7453)
+### promblem 4
+### [7453 합이 0인 네 정수](https://www.acmicpc.net/problem/7453)
 
 시간 제한 | 메모리 제한 |	제출 | 정답| 맞은 사람 | 정답 비율
 ------|------|------|------|------|------
