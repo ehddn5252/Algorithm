@@ -1,10 +1,14 @@
-목차
+### 목차
 
 [1.국영수](#promblem-1)
 [2.나이순 정렬](#promblem-2)
 [3. K번째 수](#promblem-3)
 [4. 합이 0인 네 정수](#promblem-4)
 #
+
+
+
+### [다시 목차로](#목차)
 
 ### promblem1
 
@@ -71,6 +75,8 @@ Junkyu
 Soong
 Taewhan
 ```
+
+### [다시 목차로](#목차)
 ### promblem 2
 ### [10814 나이순 정렬](https://www.acmicpc.net/problem/10814)
 
@@ -102,6 +108,8 @@ Taewhan
 21 Junkyu
 21 Dohyun
 ```
+
+### [다시 목차로](#목차)
 ### promblem 3
 ### [11004 K번째 수](https://www.acmicpc.net/problem/11004)
 
@@ -131,6 +139,8 @@ A를 정렬했을 때, 앞에서부터 K번째 있는 수를 출력한다.
 ```Python
 2
 ```
+
+### [다시 목차로](#목차)
 ### promblem 4
 ### [7453 합이 0인 네 정수](https://www.acmicpc.net/problem/7453)
 
