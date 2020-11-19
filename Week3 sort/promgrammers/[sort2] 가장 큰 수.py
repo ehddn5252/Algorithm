@@ -15,13 +15,7 @@ def solution(numbers):
     sortedNumberStr=sorted(numbersStr,reverse=True)
     tmp=""
     for pivotIndex in range(len(sortedNumberStr)):
-        for j in range(pivotIndex+1,len(sortedNumberStr)):
-            if len(sortedNumberStr[j])==len(sortedNumberStr[pivotIndex]):
-                break
-            if sortedNumberStr[pivotIndex]+sortedNumberStr[j]<sortedNumberStr[j]+sortedNumberStr[pivotIndex]:
-                tmp=sortedNumberStr[pivotIndex]
-                sortedNumberStr[pivotIndex]=sortedNumberStr[j]
-                sortedNumberStr[j]=tmp
+            if sortedNumberStr
 
     return ''.join(sortedNumberStr)
     
