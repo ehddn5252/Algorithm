@@ -6,6 +6,7 @@
 # 문제 해설 :
 # 1. 해시를 사용해서 푼다.
 # 시간 복잡도 : O(N) 
+# clear
 
 def solution():
     N,M=map(int,input().split())
