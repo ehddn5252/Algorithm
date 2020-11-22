@@ -3,7 +3,6 @@
 # 문제명 : 나이순 정렬
 # 문제요약 : 나이작은순으로 정렬한다. 같으면 등록순으로 정렬한다.
 
-
 a= int(input())
 dataList=[]
 for i in range(a):

@@ -50,10 +50,9 @@ def solution():
                 sumThirdFourthDic[third+fourth]+=1
     ans=0
     # sum12를 돌면서 sum12의 key값이 sum34의 -1 * key 가 존재하면 그 수를 ans에 추가한다. (해시)
-    for _,key in enumerate(sumFirstSecondDic):
+    for key in sumFirstSecondDic:
         if sumThirdFourthDic.get(-key):
             ans+=(sumFirstSecondDic[key]*sumThirdFourthDic[-key])
-    
     print(ans)
 
 if __name__ == "__main__":
