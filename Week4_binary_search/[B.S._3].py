@@ -1,47 +1,60 @@
-# 작성일 : 20201122
+# 작성일 : 20201125
 # 작성자 : 김동우
 # 문제명 : 공유기
 # 문제 요약 :
 # 1. 도현이 집 N개가 수직선 위에 있다.
 # 2. 와이파이를 즐기기 위해 공유기 C개를 설치하려고 한다. 
 # 3. 모든 집에서 와이파이를 즐기기 위한 와이파이의 최대 범위는?
+
 # 문제 해설 : 
-# 1. 오름차순으로 정렬한다.
-# 2. 가장 좌측과 가장 우측 값을 구한다.
-# 3. 그 둘사이의 차를 공유기 수로 나누고 변수 compare에 저장.
-#    만약 값이 유리수일 경우 올림
-# 4. 배열을 한번 돌면서 둘 사이의 간격이 compare보다 작거나 같은 수 중
-#    가장 큰 값을 찾는다. 
-# 음 .. 뭔 말인지 모르겠다.
+# 1. input 받은 값을 오름차순으로 정렬한다. 
+# 2. 가장 왼쪽에 있는 집과 가장 오른쪽에 있는 집 사이의 거리를 구한다.
+# 3. 그 거리의 반을 최소 거리로 생각하고 공유기를 설치한다.
+# 4. 만약 공유기를 다 설치하지 못했다면 위쪽의 최소거리를 3/2로 늘린다
+# 5. 다 설치했다면  최소 거리를 1/4로 줄인다.
+# 6. start가 end를 넘기 전까지 계속한다.
+
 import math
 
+def installRouter(homeList,mid):
+    routerConut=1
+    beforeInstalled=homeList[0]
+    for homeIndex in range(1,len(homeList)):
+        if homeList[homeIndex]-beforeInstalled>=mid:
+            beforeInstalled=homeList[homeIndex]
+            routerConut+=1
+
+    return routerConut
+
 def solution():
-    x= input().split()
-    N=0
-    C=0
-    inputedList=[]
-    N,C=map(int,x)
-    for _ in range(N):
-        inputedList.append(int(input()))
-    
-    inputedList.sort()
-    compare=0
+    n,theNumberOfRouter=map(int,input().split())
+    homeList=[]
+    for _ in range(n):
+        inputedValue=int(input())
+        homeList.append(inputedValue)
+    # 1. input 받은 값을 오름차순으로 정렬한다. 
+    homeList.sort()
+
+    start=1
+    # 2. 가장 왼쪽에 있는 집과 가장 오른쪽에 있는 집 사이의 거리를 구한다.
+    end=homeList[-1]-homeList[0]
     ans=0
-    compare=math.ceil((inputedList[-1]-inputedList[0])/C)
+    while(start<=end):
+        # 3. 그 거리의 반을 최소 거리로 생각하고 공유기를 설치한다.
+        mid=(end+start)//2
+        checkRouterNum=installRouter(homeList,mid)
+        # 4. 다 설치 가능하다면 최소 거리를 이분탐색을 활용해 늘린다.
+        if(checkRouterNum>=theNumberOfRouter):
+            ans=mid 
+            start=mid+1
+        # 5. 만약 공유기를 다 설치하지 못했다면 위쪽의 최소거리를 줄인다.
+        elif(checkRouterNum<theNumberOfRouter):
+            end=mid-1
+        # 6. start가 end를 넘기 전까지 계속한다.
 
-    if inputedList[1]-inputedList[0]<=compare:
-        ans=inputedList[1]-inputedList[0]
-
-    for index,num in enumerate(inputedList):
-        if index==0:
-            continue
-
-        if num-inputedList[index-1]>compare:
-            continue
-        else:
-            if num-inputedList[index-1]>=ans:
-                ans=num-inputedList[index-1]
     print(ans)
+
+
 
 if __name__ == "__main__":
     solution()

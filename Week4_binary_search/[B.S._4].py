@@ -20,18 +20,16 @@ def input_Func():
     inputedList=list(map(int,input().split()))
     return inputedList
 
-
 def solution(inputedList):
     max=[0,0]
     min=[999999,0]
-    # 좌측 
+    
     for index,num in enumerate(inputedList):
         if num>=max[0]:
             max=[num,index]
         if num<min[0]:
             min=[num,index]
     ans=1
-    queue=[]
     for i,num in enumerate(inputedList):
         if i>max[1]:
             break
