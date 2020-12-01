@@ -4,7 +4,7 @@
 # 문제 요약 :
 # 1. 도현이 집 N개가 수직선 위에 있다.
 # 2. 와이파이를 즐기기 위해 공유기 C개를 설치하려고 한다. 
-# 3. 모든 집에서 와이파이를 즐기기 위한 와이파이의 최대 범위는?
+# 3. 와이파이를 즐기기 위한 와이파이의 최대 범위는?
 # 문제 본문은 contents.md 참고 
 
 # 문제 해설 : 
@@ -49,6 +49,7 @@ def solution():
     # 2. 가장 왼쪽에 있는 집과 가장 오른쪽에 있는 집 사이의 거리를 구한다.
     end=homeList[-1]-homeList[0]
     ans=0
+
     while(start<=end):
         # 3. 그 거리의 반을 최소 거리로 생각하고 공유기를 설치한다.
         mid=(end+start)//2
@@ -61,9 +62,7 @@ def solution():
         elif(checkRouterNum<theNumberOfRouter):
             end=mid-1
         # 6. start가 end를 넘기 전까지 계속한다.
-
     print(ans)
-
 
 
 if __name__ == "__main__":

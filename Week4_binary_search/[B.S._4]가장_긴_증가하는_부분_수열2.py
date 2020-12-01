@@ -35,8 +35,10 @@
 #  {1,2,4,7} -> {1,2,4,6}
 # 6번째 인덱스 8이 들어온다. 그대로 8을 넣어준다. 
 # {1,2,4,6} -> {1,2,4,6,8} 
-
+# {1,2,4,8,3,5,8}
+# { 1 2 3 5 8 }
 # lower_bound는 subsequenceList에서 num을 찾거나 num보다 큰 수 중 가장 작은 수의 인덱스를 return한다.
+
 def lower_bound(subsequenceList,num):
     start=0
     end=len(subsequenceList)-1
@@ -50,11 +52,11 @@ def lower_bound(subsequenceList,num):
     return end
 
 def solution():
-
     garbage=int(input())
     inputedList=[]
     inputedList=list(map(int,input().split()))
     subsequenceList=[]
+
     # 1. 주어진 수열을 처음부터 끝까지 검색한다.
     for num in inputedList:
         # 2. 만약  리스트가 비어있으면 현재 위치의 NUM을 리스트에 추가한다.

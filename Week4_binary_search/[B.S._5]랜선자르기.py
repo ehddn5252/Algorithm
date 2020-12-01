@@ -31,14 +31,12 @@ def solution():
         LANCount=0
         for num in inputedList:
             LANCount+=num//mid
-            # 잘라서 나온 
-            if LANCount>objectLanNum:
-                start=mid+1
-            elif LANCount==objectLanNum:
-                ans=mid
-                start=mid+1
-            else:
-                end=mid-1
+
+        if LANCount>=objectLanNum:
+            start=mid+1
+            ans=mid
+        else:
+            end=mid-1
 
     print(ans)
 

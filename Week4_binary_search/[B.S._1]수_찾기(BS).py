@@ -1,4 +1,4 @@
-# 작성일 : 20201122
+# 작성일 : 20201126
 # 작성자 : 김동우
 # 문제명 : 수 찾기
 # 문제 요약 :
@@ -25,7 +25,6 @@ def solution():
     inputedList2=list(map(int,input().split()))
     int(input())
     inputedList1=list(map(int,input().split()))
-    
 
     inputedList2.sort()
     ansList=[]
