@@ -1,4 +1,4 @@
-# 작성일 : 20201201
+# 작성일 : 20201202
 # 작성자 : 김동우
 # 문제명 : 덩치
 # 문제 요약 :
@@ -9,37 +9,28 @@
 # 문제 본문은 contents.md 참고 
 
 # 문제 해설 : 
-# 1. index를 순서대로 append한다
-# 2. 
-# 시간 복잡도 : O(N^3)
+# 1. 1등부터 시작해서 덩치와 키가 둘 다 작은 경우에 등수를 하나씩 올린다.
+# 2. 맨 마지막에 등수를 ansList에 추가한다.
+# 시간 복잡도 : O(N^2)
 
 def solution():
     N= int(input())
     person=[]
     for i in range(N):
         person.append(list(map(int,input().split())))
-    for i in range(N):
-        person[i].append(i)
-
-    rank=1
-    stack=0
-    person.sort(key=lambda x:(-x[0]))
+        
+    ansList=[]
     personSize=len(person)
-    for pivot in range(0,personSize-1):
-        person[pivot].append(rank)
-        if(person[pivot][1]>person[pivot+1][1]):
-            rank+=1+stack
-            stack=0
-        else:
-            stack+=1
-
-    person[personSize-1].append(rank)
-    person.sort(key=lambda x:(x[2]))
+    for pivot in range(0,personSize):
+        rank=1
+        for compare in range(0,personSize):
+            if (person[pivot][0] < person[compare][0]) and (person[pivot][1] < person[compare][1]):
+                rank+=1
+        ansList.append(rank)
     ans=""
-    for i in person:
-        ans+=str(i[3])
-        if(i!=person[-1]):
-            ans+=" "
+    for i in ansList:
+        ans+=str(i)
+        ans+=" "
     print(ans)
 
 

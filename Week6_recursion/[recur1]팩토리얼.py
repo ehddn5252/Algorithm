@@ -10,7 +10,7 @@ def recur(num):
     if num>1:
         return num*recur(num-1)
     else: 
-        return 1
+        return 1    
 
 def solution():
     N=int(input())

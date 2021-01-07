@@ -15,6 +15,7 @@
 # 2-4. listValue==mid라면 존재하는 것으로 리스트에 1을 추가
 # 2-5. start<=end인 동안에 없다면 0을 추가
 # 시간 복잡도 : O(N*log_2(N))
+
 N=0
 inputedList1=[]
 M=0

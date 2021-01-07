@@ -20,7 +20,7 @@ def solution():
     inputedList1=list(map(int,input().split()))
     int(input())
     inputedList2=list(map(int,input().split()))
-    
+
     checkDic={}
     for num in inputedList1:
         checkDic[num]=1
