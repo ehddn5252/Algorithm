@@ -26,4 +26,3 @@ def solution(begin, target, words):
         return 0
     print(min(answerList))
     return min(answerList)
-
