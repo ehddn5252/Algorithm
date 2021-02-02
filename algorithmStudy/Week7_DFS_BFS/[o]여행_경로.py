@@ -18,27 +18,7 @@ def recur(destination,answer,tickets):
     if len(answer)==endCondition:
         ansList.append(answer)
         return
-    
-    '''
-    #가지치기
-    canFinish=False
-    dic={}
-    for i in tickets:
-        if i[0] not in dic:
-            dic[i[0]]=1
-        else:
-            dic[i[0]]+=1
-        if i[1] not in dic:
-            dic[i[1]]=1
-        else:
-            dic[i[1]]+=1
-    for i in dic.values():
-        if i%2==1:
-            canFinish=True
-    if canFinish==False:
-        return
-    '''
-    
+
     for value in tickets:
         if answer[-1]==value[0]:
             inputValue=value[:]

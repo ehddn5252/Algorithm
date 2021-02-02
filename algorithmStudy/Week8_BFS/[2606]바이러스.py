@@ -10,6 +10,7 @@ def solution():
         inputTmp=list(map(int,input().split()))
         computerConnection.append(inputTmp)
     flag=1
+
     for i in computerConnection:
         computer1=entireConnection[i[0]-1]
         computer2=entireConnection[i[1]-1]
@@ -29,5 +30,6 @@ def solution():
         if value==entireConnection[0]:
             answer+=1
     print(answer)
+    
 if __name__ == "__main__":
     solution()

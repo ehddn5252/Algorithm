@@ -30,7 +30,7 @@ def solution(N,dp):
     for i in range(2,N+1):
         dp[i][0] = dp[i-1][0] + dp[i-2][0]
         dp[i][1] = dp[i-1][1] + dp[i-2][1]
-    
+
     print(str(dp[N][0])+" "+str(dp[N][1]))
 
 if __name__=="__main__":

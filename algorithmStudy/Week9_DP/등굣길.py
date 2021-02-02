@@ -19,7 +19,7 @@ def solution(m, n, puddles):
     # dp 배열 만들기
     for rowIndex,rowValue in enumerate(dp):
         if rowIndex==0: continue
-        for colIndex,colValue in enumerate(rowValue):
+        for colIndex,_ in enumerate(rowValue):
             if colIndex==0: continue
             if dp[rowIndex][colIndex]!=0:
                 dp[rowIndex][colIndex]=dp[rowIndex-1][colIndex]+dp[rowIndex][colIndex-1]

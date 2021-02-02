@@ -1,10 +1,13 @@
+
+
 answerList=[]
 checkList=[]
 def DFS(transFormedWord,check,words,target):
     global checkList
+    
     if check>len(words):
-        checkList=[]
         return
+    
     if target==transFormedWord:
         answerList.append(check)
         checkList=[]  

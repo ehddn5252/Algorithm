@@ -10,7 +10,7 @@ def solution(N, number):
     for i in range(1, 9):
         # 중복없는 리스트 set
         numbers = set()
-        # 숫자를 붙인 수를 더한다.
+        # 숫자를 붙인 수를 더한다. 
         numbers.add( int(str(N) * i) )
         # 각 횟수마다 할 수 있는 모든 경우의 수를 저장
         for j in range(0, i-1):
@@ -25,14 +25,18 @@ def solution(N, number):
                     numbers.add(x + y)
                     numbers.add(x - y)
                     numbers.add(x * y)
-
                     if y != 0:
                         numbers.add(x // y)
+                    if number in numbers: 
+                        answer = i
+                        print(i)
+                        exit() 
         # 정답이 있으면 바로 나감
+        '''
         if number in numbers:
             answer = i
             break
-
+        '''
         DP.append(numbers)
     print(DP)
     print(numbers)

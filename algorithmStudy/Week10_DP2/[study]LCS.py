@@ -1,3 +1,4 @@
+
 # DP 알고리즘 떠올리기가 너무 어렵다.. 
 
 
@@ -12,31 +13,39 @@ def solution(str1,str2):
                 dp[i][j]=dp[i-1][j-1]+1
             else:
                 dp[i][j]=max(dp[i-1][j],dp[i][j-1])
-    
-    print(dp[-1][-1])
+    print(dp)
+    for i in range(len(dp[0])):
+        print(dp[i])
+    #print(dp[-1][-1])
 
 
 if __name__=="__main__":
-    str1=input()
-    str2=input()
+    str1="ACAYKP"#input()
+    str2="CAPCAK"#input()
     solution(str1,str2)
 
-''' 파이썬 1등
+
+
+'''
+#파이썬 1등
 def s():
     s1, s2 = input(), input()
     dp = [0] * 1000
+    # 문자열 1
     for i in range(len(s1)):
         max_dp = 0
+        #문자열2 
         for j in range(len(s2)):
             if max_dp < dp[j]:
                 max_dp = dp[j]
+            # 
             elif s1[i] == s2[j]:
                 dp[j] = max_dp + 1
     print(max(dp))
 s()
 '''
-
-''' C++ 2등
+'''
+ C++ 2등
 #include<cstdio>
 #include<algorithm>
 #include<vector>
@@ -64,4 +73,5 @@ int main()
 	return 0;
 	
 }
+
 '''
