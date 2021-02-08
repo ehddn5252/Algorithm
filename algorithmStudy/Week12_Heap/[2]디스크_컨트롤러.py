@@ -16,10 +16,12 @@ jobs의 각 행은 하나의 작업에 대한 [작업이 요청되는 시점, �
 '''
 
 # 문제 풀이 : 
+# 0. time은 맨 처음 시작 시간과 현재 시간으로 걸리는 시간을 계속 더한다.
 # 1. 시작하는 작업의 시작하는 시간 + 걸리는 시간(jobs[index][0]+jobs[index][1])이 
-# 그 다음 시작하는 작업의 시작 시간보다 작으면 그 다음 시작하는 작업의 걸리는 시간을 더한다.
+# 그 다음 시작하는 작업의 시작 시간보다 작으면 그 다음 시작하는 작업의 걸리는 시간을 더한다. 그 후 더한 job을 pop한다.
 # 2. 시작하는 작업의 시작하는 시간 + 걸리는 시간(jobs[index][0]+jobs[index][1])이
 # 그 다음 시작하는 작업의 시작 시간보다 크면 전체 중 걸리는 시간이 가장 작은 것을 찾아서 time에 time - 시작시간(start) + 걸리는시간을 더한다.
+# 그 이후 똑같이 pop
 #  
 import heapq
 
@@ -28,16 +30,19 @@ def solution(jobs):
     jobs.sort(key= lambda x:(x[0],x[1]))
     jobsLen=len(jobs)
     index=0
+    # 0. time은 현재 시간으로 걸리는 시간을 계속 더한다.
     time=jobs[0][0]+jobs[0][1]
     answer = jobs[0][1]
     jobs.pop(0)
     while jobs:
-        #print(time)
+        # 1. 시작하는 작업의 시작하는 시간 + 걸리는 시간(jobs[index][0]+jobs[index][1])이 
+        # 그 다음 시작하는 작업의 시작 시간보다 작으면 그 다음 시작하는 작업의 걸리는 시간을 더한다.
         if time<=jobs[0][0]:
             time+=jobs[0][1]
             answer += jobs[0][1]
-            #print(jobs[0])
+            #그 후 더한 job을 pop한다.
             jobs.pop(0)
+        # 2. 시작하는 작업의 시작하는 시간 + 걸리는 시간(jobs[index][0]+jobs[index][1])이 그 다음 시작하는 작업의 시작 시간보다 크면 
         else:
             minValue=9876543210
             minindex=0
@@ -45,6 +50,7 @@ def solution(jobs):
                 if time>jobs[i][0] and minValue>jobs[i][1]:
                     minindex=i
                     minValue=jobs[i][1]
+            # 전체 중 걸리는 시간이 가장 작은 것을 찾아서 time에 time - 시작시간(start) + 걸리는시간을 더한다.
             answer+=time+jobs[minindex][1]-jobs[minindex][0]
             time +=jobs[minindex][1]
             #print(jobs[minindex])
