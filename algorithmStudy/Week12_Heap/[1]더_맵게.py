@@ -1,5 +1,5 @@
 # 작성일자 : 20210208
-# 문제명 : 더 맵게 (heap)
+# 문제명 : [프로그래머스 힙] 더 맵게 
 # 문제 요약 : 음식의 스코빌 지수 리스트와 최소 스코빌 지수가 주어진다.
 # 스코빌 리스트에 있는 음식 2개를 섞으면 
 # 섞은 음식의 스코빌 지수 = 가장 맵지 않은 음식의 스코빌 지수 + (두 번째로 맵지 않은 음식의 스코빌 지수 * 2) 가 된다.
@@ -22,9 +22,6 @@ def solution(scoville, K):
         mixedFood=mostNotSpicy+secondNotSpicy*2
         heapq.heappush(heap,mixedFood)
         mixCount+=1
-
-
-
 
 if __name__=="__main__":
     scoville=[1, 2, 3, 9, 10, 12]
