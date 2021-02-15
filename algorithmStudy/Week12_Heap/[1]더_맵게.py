@@ -9,7 +9,7 @@ import heapq
 
 def solution(scoville, K):
     heap = []
-    for index,value in enumerate(scoville):
+    for _,value in enumerate(scoville):
         heapq.heappush(heap, value)
     mixCount = 0
     while True:

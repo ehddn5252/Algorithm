@@ -14,8 +14,7 @@ def solution(numbers):
         sortedNumberStr=[]
     sortedNumberStr=sorted(numbersStr,reverse=True)
     tmp=""
-    for pivotIndex in range(len(sortedNumberStr)):
-            if sortedNumberStr
+    #for pivotIndex in range(len(sortedNumberStr)):
 
     return ''.join(sortedNumberStr)
     

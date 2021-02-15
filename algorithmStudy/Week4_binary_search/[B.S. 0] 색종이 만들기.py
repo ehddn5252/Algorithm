@@ -14,24 +14,3 @@
 # 문제 해설 :
 # 1. 배열 탐색을 한다. 만약 같은 수가 있을 경우
 
-
-def input_Func():
-    N=int(input())
-    inputedList=[]
-
-    for _ in range(N):
-        inputedList=list(map(int,input().split()))
-    return inputedList
-
-#def recursive():
-
-
-def solution(inputedList):
-    for rowIndex,row in enumerate(inputedList):
-        for colIndex,col in enumerate(inputedList):
-
-
-
-
-if __name__ == "__main__":
-    solution(input_Func())

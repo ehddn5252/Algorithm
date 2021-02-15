@@ -4,7 +4,6 @@
 
 def solution(operations):
     queue=[]
-    
     try: 
         for operation in operations:
             # 만약 I로 시작하면 queue에 넣는다

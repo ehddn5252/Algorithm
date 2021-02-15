@@ -17,7 +17,6 @@ def solution():
 	print(dp[K])
 
 
-
 if __name__=="__main__":
     global coinList, K
     N,K=map(int,stdin.readline().split())

@@ -22,14 +22,14 @@ jobs의 각 행은 하나의 작업에 대한 [작업이 요청되는 시점, �
 # 2. 시작하는 작업의 시작하는 시간 + 걸리는 시간(jobs[index][0]+jobs[index][1])이
 # 그 다음 시작하는 작업의 시작 시간보다 크면 전체 중 걸리는 시간이 가장 작은 것을 찾아서 time에 time - 시작시간(start) + 걸리는시간을 더한다.
 # 그 이후 똑같이 pop
-#  
+#  job [i][0] 이 시작시간이고   job [i][1] 이 걸리는 시간  [[1,2],[]]
 import heapq
 
 def solution(jobs):
     
     jobs.sort(key= lambda x:(x[0],x[1]))
     jobsLen=len(jobs)
-    index=0
+
     # 0. time은 현재 시간으로 걸리는 시간을 계속 더한다.
     time=jobs[0][0]+jobs[0][1]
     answer = jobs[0][1]
