@@ -1,10 +1,3 @@
-str1 = "1234"
+dp=[1,2,3,4,5,6,7,8]
 
-objStr="12345678"
-
-if str1 in objStr:
-    print("True")
-    index=objStr.find(str1)
-    objStr=objStr[:index]+objStr[index+len(str1):]
-    print(f'objStr: {objStr}')
-    print(f'len(objStr): {len(objStr)}')
+print(dp[-2:3])
