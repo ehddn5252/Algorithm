@@ -2,28 +2,25 @@
 # 문제명 : 풍선 터트리기 [월간 코드 챌린지 시즌1 2번째 문제]
 # 문제 풀이 
 # 조건 1. 자신을 기준으로 양쪽에 자신보다 작은 값이 있으면 안된다.
+# -> 한쪽에는 작은 값이 있어도 된다.
 # 위 조건을 만족하는 O(N)을 찾으면 된다.
 # O(N)의 시간 복잡도를 가져야 한다.
-# -> 양 끝이 몇 번째로 큰 수인지 확인한다.
-# -> max(왼쪽 끝 순위, 오른쪽 끝 순위)가 값이 답이다.
 # 만약 이 값이 len(a)를 넘는다면 len(a)가 답
-
-
+# 어떻게 해야 O(N)의 시간 복잡도를 가질 수 있을까?
+# 일단 크기를 한번 쭉 비교를 해야한다.
 
 def solution(a):
-    answer = 0
-
-    left_rank=1
-    right_rank=1
-    for value1 in a:
-        if a[-1]>value1:
-            right_rank+=1
-        if a[0]>value1:
-            left_rank+=1 
-    print(f'left_rank,right_rank : {left_rank} , {right_rank}')
-    answer=max(right_rank,left_rank)
-    print(f'answer : {answer}')
-    return answer
+    answer = [ False for _ in range(len(a))]
+    min_left,min_right = float("inf"),float("inf")
+    for index,_ in enumerate(a):
+        if a[index]<min_left:
+            min_left=a[index]
+            answer[index]=True
+        if a[-1-index]<min_right:
+            min_right=a[-1-index]
+            answer[-1-index]=True
+    print(sum(answer))
+    return sum(answer)
 
 
 if __name__=="__main__":
