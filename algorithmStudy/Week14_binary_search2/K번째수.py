@@ -26,7 +26,7 @@ def solution(arraySize,K):
         mid=(start+end)//2
         count=0
         for i in range(1,arraySize+1):
-            # 이거 첨에 우째 생각해내냐? ㄷㄷ 
+            # 첨에 생각하기 힘듬
             count+=min(mid//i,arraySize)
         if count>=K:
             answer=mid

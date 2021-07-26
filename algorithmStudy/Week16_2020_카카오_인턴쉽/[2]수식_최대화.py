@@ -14,7 +14,7 @@
 import copy
 
 def expressionCalcu(expressionList1,operateOrder,number):
-    print(expressionList1)
+    #print(expressionList1)
     while(operateOrder[number] in expressionList1):
         for index,_ in enumerate(expressionList1):
             if index+1<len(expressionList1):
@@ -38,6 +38,7 @@ def solution(expression):
     
     expressionOperatelist=[["+","-","*"],["+","*","-"],["-","+","*"],["-","*","+"],["*","-","+"],["*","+","-"]]
     # exrpeesion에 리스트 형태로 저장한다.
+    # "100-200*300-500+20"
     expressionList=[]
     for index,value in enumerate(expression):
         # 맨 마지막 일때
@@ -49,18 +50,15 @@ def solution(expression):
             expressionList.append(expression[index])
             firstIndex=index+1
     print(expressionList)
+
     for operateOrder in expressionOperatelist:
         expressionList1=copy.deepcopy(expressionList)
-        print("1")
         expressionList1=expressionCalcu(expressionList1,operateOrder,0)
-        print(f'operateOrder : {operateOrder[0]}연산')
-        print(expressionList1)
+        #print(f'operateOrder : {operateOrder[0]}연산')
         expressionList1=expressionCalcu(expressionList1,operateOrder,1)
-        print(f'operateOrder : {operateOrder[1]}연산')
-        print(expressionList1)
+        #print(f'operateOrder : {operateOrder[1]}연산')
         expressionList1=expressionCalcu(expressionList1,operateOrder,2)
-        print(f'operateOrder : {operateOrder[2]}연산')
-        print(expressionList1)
+        #print(f'operateOrder : {operateOrder[2]}연산')
         answerList.append(abs(expressionList1[0]))
     print(answerList)
     return max(answerList)

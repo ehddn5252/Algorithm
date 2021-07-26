@@ -29,7 +29,6 @@ def solution():
         thirdList.append(inputedList[2])
         fourthList.append(inputedList[3])
 
-
     sumFirstSecondDic={}
     for first in firstList:
         for second in secoondList:

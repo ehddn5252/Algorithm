@@ -30,7 +30,7 @@ def solution():
 
     for _ in range(N):
         weightAndValue.append(list(map(int,input().split()))) 
-    
+
     visited=[0]*N
     for index,value in enumerate(weightAndValue):
         visited[index]=1
@@ -42,3 +42,4 @@ def solution():
 
 if __name__ =="__main__":
     solution()
+

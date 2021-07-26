@@ -54,5 +54,5 @@ for i in range(row):
 
 T = int(input())
 for i in range(T):
-    N,M = map(int,input().split())
+    N,M = map( int, input().split() )
     print(dp[N-1][M-1])

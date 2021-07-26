@@ -23,7 +23,7 @@ def solution(arraySize,K):
                 dictionaryValue[i*j]+=1
             else:
                 dictionaryValue[i*j]=1
-    
+
     for i in range(K+1):
         if dictionaryValue.get(i,0)==0:
             continue

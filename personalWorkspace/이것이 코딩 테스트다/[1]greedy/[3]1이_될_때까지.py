@@ -19,7 +19,7 @@ def solution(N,dividingNumber):
             answer+=N%dividingNumber
             N-=N%dividingNumber
     print(answer-1)
-    
+
 if __name__=="__main__":
     N,dividingNumber= map(int,sys.stdin.readline().split())
     solution(N,dividingNumber)

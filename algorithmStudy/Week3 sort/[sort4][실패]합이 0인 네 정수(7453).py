@@ -30,7 +30,7 @@ def solution():
         secoondList.append(inputedList[1])
         thirdList.append(inputedList[2])
         fourthList.append(inputedList[3])
-    
+
     sumFirstSeconddList=[]
     # 1. 0번째, 1번째 인덱스를 더한 집합과 2번째, 3번째 인덱스를 더한 2개의 집합으로 나눈다. sumFirstSecondList, sumThirdFourthList
     for firstNum in firstList:

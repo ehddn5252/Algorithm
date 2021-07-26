@@ -19,6 +19,6 @@ def solution():
     ans=recur(num)
     print(ans)
 
-
 if __name__ == "__main__":
     solution()
+

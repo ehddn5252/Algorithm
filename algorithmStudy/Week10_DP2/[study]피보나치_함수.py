@@ -36,8 +36,7 @@ def solution(N,dp):
 if __name__=="__main__":
     testcase=int(input())
     dp=[[1,0],[0,1],[1,1]]
-    
+
     for i in range(testcase):
         N=int(input())
         solution(N,dp[:])
-

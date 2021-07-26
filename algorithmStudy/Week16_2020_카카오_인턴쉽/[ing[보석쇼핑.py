@@ -22,23 +22,31 @@ def solution(gems):
         if value not in gemHash:
             gemHash[value]=0
             genKinds+=1
-
-    start = 0
-    end = 0
+    #start부터 end까지 보석이 있는 지 확인한다.
+    start =0
+    # 모든 보석 종류가 하나씩있으면 멈춥니다.
+    end=0
+    endFlag=True
     # 만약 end가 gems보다 커지면 나가진다.
     while end<len(gems) and start<=end:
         # end가 움직이는 조건
-        if currentKinds!=genKinds:
+        if endFlag:
             if gemHash[gems[end]]==0:
                 currentKinds+=1
             gemHash[gems[end]]+=1
             if currentKinds==genKinds:
+                #if end-start+1==genKinds:
+                #    return [start+1,end+1]
                 answerList.append([start+1,end+1])
+                endFlag=False
             else:
-                end += 1
+                end+=1
         else:
+            endFlag=True
             if gemHash[gems[start]]==1:
                 currentKinds-=1
+            else:
+                answerList.append([start+1,end+1])
             gemHash[gems[start]]-=1
             start+=1
 

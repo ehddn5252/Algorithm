@@ -11,7 +11,6 @@
 # 시간 복잡도 : O(N^2)
 # 고민 : 예외가 무엇인지 확인해야 한다. -> 문제 이해를 잘못함 해결(20201113)
 
-
 genres=["classic", "pop", "classic", "classic", "pop"]
 plays=[500, 600, 150, 800, 2500]
 def solution(genres, plays):

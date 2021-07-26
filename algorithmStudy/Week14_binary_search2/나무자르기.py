@@ -1,6 +1,7 @@
 # 작성일자 : 20210222
 # 문제명 : 나무 자르기
-# 
+
+# 문제 풀이 : 잘라야 할 나무의 길이를 이분 탐색의 기준으로 설정한다.
 
 from sys import stdin
 
@@ -20,7 +21,6 @@ def solution(treeList,neededTreeLength):
         elif colletedTreeLenghSum<neededTreeLength:
             end=mid-1
     print(answer)
-
 
 
 

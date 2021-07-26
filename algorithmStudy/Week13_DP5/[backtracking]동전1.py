@@ -7,7 +7,7 @@
 
 
 # 문제 풀이 : 1. 백트레킹으로 모든 경우의 수를 확인한다.
-#             2.  
+#             2.
 # 항상 얕은 복사와 깊은 복사를 생각해야 한다.
 # 아래와 같이 백트레킹으로 할 시에 RecursionError: maximum recursion depth exceeded in comparison 런타임 에러가 발생한다.
 # 런타임을 없애기 위해 sys.setrecursionlimit(10**7)을 사용하면 시간초과가 뜬다 -> 동적 계획법으로 다시풀자
