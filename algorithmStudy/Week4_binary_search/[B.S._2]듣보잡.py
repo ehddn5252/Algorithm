@@ -15,11 +15,13 @@ def solution():
     N,M=map(int,input().split())
     notHear={}
     inputedString=""
+
     # 듣도못한
     for _ in range(N):
         inputedString=str(input())
         notHear[inputedString]=1
     ansList=[]
+
     # 보도 못한
     for _ in range(M):
         inputedString=str(input())
@@ -31,6 +33,6 @@ def solution():
     for deudbojab in ansList:
         print(deudbojab)
 
-
 if __name__ == "__main__":
     solution()
+

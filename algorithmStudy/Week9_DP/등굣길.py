@@ -16,6 +16,7 @@ def solution(m, n, puddles):
             for i in range(len(dp)):
                 if i>puddle[1]-1:
                     dp[i][0]=0
+
     # dp 배열 만들기
     for rowIndex,rowValue in enumerate(dp):
         if rowIndex==0: continue

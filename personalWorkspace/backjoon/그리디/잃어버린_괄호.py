@@ -20,7 +20,7 @@
 '''
 
 from sys import stdin
-def 
+
 
 
 def solution(input_string):

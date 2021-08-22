@@ -23,7 +23,7 @@ def solution():
             strList.append(inputedStr)
     except:
         pass
-    
+
     for givenString in strList:
         for value in givenString:
             if value=="O":

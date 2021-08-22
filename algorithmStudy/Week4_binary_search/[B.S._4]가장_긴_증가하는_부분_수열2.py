@@ -37,6 +37,7 @@
 # {1,2,4,6} -> {1,2,4,6,8} 
 # {1,2,4,8,3,5,8}
 # { 1 2 3 5 8 }
+
 # lower_bound는 subsequenceList에서 num을 찾거나 num보다 큰 수 중 가장 작은 수의 인덱스를 return한다.
 
 def lower_bound(subsequenceList,num):

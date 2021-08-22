@@ -8,8 +8,10 @@
 # 3. 그리고 맨 밑에 있는 원판을 목적지로 옮겼다면 그 위에 있던
 # 4. 경유지에 있던 것들을 목적지로 옮겨야 한다.
 
+
 def move(N, start, to):
     print(str(start)+" "+str(to))
+
 
 def hanoi(N, start, to, via):
     if N == 1:
