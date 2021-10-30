@@ -16,7 +16,7 @@ for i in range(n):
 # 방향 확인용 좌표 dx와 dy
 # 중앙을 기준으로 좌/우/위/아래
 dx = [-1, 1, 0, 0]
-dy = [0, 0, 1, -1]  
+dy = [0, 0, 1, -1]
 
 # DFS 함수 정의
 def dfs(x, y, c):
@@ -36,7 +36,7 @@ def dfs(x, y, c):
 
 cnt = 1 # 아파트 단지 세기 위한
 numlist = [] # 아파트 단지별 숫자
-nums=0 # 아파트 수
+nums = 0 # 아파트 수
 for a in range(n):
     for b in range(n):
         # 방문했으면 0 매트릭스에서 1이면 dfs 들어간다.

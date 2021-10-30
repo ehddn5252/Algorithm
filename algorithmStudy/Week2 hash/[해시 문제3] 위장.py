@@ -15,17 +15,17 @@
 # 시간 복잡도 : O(N) (clothes 리스트 검색)
 
 def solution(clothes):
-    answer=1
-    answerDictionary={}
+    answer = 1
+    answerDictionary = {}
     # 해시 초기화
     for i in clothes:
-        answerDictionary[i[1]]=0
+        answerDictionary[i[1]] = 0
     # 각 종류에 따라 해시값을 추가해준다.
     for i in clothes:
-        answerDictionary[i[1]]+=1
+        answerDictionary[i[1]] += 1
     # 각 종류당 +1한 값을 answer에 곱해준다.
     for value in answerDictionary.values():
         answer*=(value+1)
     # 아예 아무것도 안 입는 경우 하나를 뺀다.
-    answer-=1
+    answer -= 1
     return answer

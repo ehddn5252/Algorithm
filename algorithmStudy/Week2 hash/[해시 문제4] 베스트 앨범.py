@@ -28,18 +28,18 @@ def solution(genres, plays):
     # 플레이 횟수의 합을 compareMaxPlay에 저장한다.
     compareMaxPlay={}
     for album in albumList:
-        compareMaxPlay[album[0]]=0
+        compareMaxPlay[album[0]] = 0
 
     for album in albumList:
-        compareMaxPlay[album[0]]+=album[1]
+        compareMaxPlay[album[0]] += album[1]
     # album 재생수가 높은 순으로 sort albumSort = [(POP,5000),(classic,2000),(ahl,1000)...]
-    albumSort=sorted(compareMaxPlay.items(),key=lambda x:-x[1])
+    albumSort = sorted(compareMaxPlay.items(), key=lambda x:-x[1])
 
     # 정답 구하는 알고리즘
     for albumName in albumSort:
-        maxTwoAlbumCheck=0
+        maxTwoAlbumCheck = 0
         for num,i in enumerate(albumList):
             if i[0]==albumName[0] and maxTwoAlbumCheck<2:
-                answer.append(albumList[num][2])
-                maxTwoAlbumCheck+=1
+                answer.append( albumList[num][2] )
+                maxTwoAlbumCheck += 1
     return answer

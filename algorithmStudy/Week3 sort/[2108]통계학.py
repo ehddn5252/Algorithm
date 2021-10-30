@@ -23,9 +23,7 @@ def solution(numberList):
     # 최빈값을 구해야 한다. 최빈값은 중복값이 가장 많이 나오는 값
     rangeValue=numberList[-1]-numberList[0]
     mode=getMode(numberList)
-    
-    
-        
+
     print(arithmeticMean)
     print(median)
     print(mode)

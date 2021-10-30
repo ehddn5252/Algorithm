@@ -32,7 +32,7 @@ def solution(N, number):
                         print(i)
                         exit() 
         # 정답이 있으면 바로 나감
-        
+
         '''
         if number in numbers:
             answer = i

@@ -26,3 +26,4 @@ def solution(participant, completion):
     # 만약 빼고 맨 마지막에 남은 해시 값이 -1인 경우에 그 사람이 마나톤을 완주 못한 사람이다.
         if answerDictionary[i]==-1:
             return i
+

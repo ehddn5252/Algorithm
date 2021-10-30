@@ -34,24 +34,24 @@ def solution():
         for second in secoondList:
             # 여기서 없을 시에 초기화를 자동으로 실행 한다.
             if not sumFirstSecondDic.get(first+second):
-                sumFirstSecondDic[first+second]=1
+                sumFirstSecondDic[first+second] = 1
             else:
-                sumFirstSecondDic[first+second]+=1
+                sumFirstSecondDic[first+second] += 1
 
-    sumThirdFourthDic={}
+    sumThirdFourthDic = {}
     for third in thirdList:
         for fourth in fourthList:
             # sum34에 key가 third+fourth인 dic이 없을 시에 초기화를 자동으로 실행 한다.
             if not sumThirdFourthDic.get(third+fourth):
-                sumThirdFourthDic[third+fourth]=1
+                sumThirdFourthDic[third+fourth] = 1
             # 만약 있으면 개수를 추가한다. 
             else:
-                sumThirdFourthDic[third+fourth]+=1
+                sumThirdFourthDic[third+fourth] += 1
     ans=0
     # sum12를 돌면서 sum12의 key값이 sum34의 -1 * key 가 존재하면 그 수를 ans에 추가한다. (해시)
     for key in sumFirstSecondDic:
         if sumThirdFourthDic.get(-key):
-            ans+=(sumFirstSecondDic[key]*sumThirdFourthDic[-key])
+            ans += (sumFirstSecondDic[key]*sumThirdFourthDic[-key])
     print(ans)
 
 if __name__ == "__main__":
