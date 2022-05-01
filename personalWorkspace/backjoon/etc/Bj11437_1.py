@@ -6,14 +6,13 @@ import sys
 
 def find_parent(num)->list:
     global init_l
-    for i,v in enumerate(_map):
-        if (_map[num][i]==1):
-            init_l.append(i)
-            find_parent(i)
+    for i,v in enumerate(_map[num]):
+        init_l.append(v)
+        find_parent(v)
 
 
 N = int(sys.stdin.readline())
-_map = [[0 for i in range(N)]for i in range(N)]
+_map = [[]for i in range(N)]
 dp = [[] for i in range(N)]
 
 for i in range(N-1):
@@ -22,11 +21,13 @@ for i in range(N-1):
         tmp=start
         start=end
         end=tmp
-    _map[end-1][start-1] = 1
+    _map[end-1].append(start-1)
+
 for i in range(N):
     init_l=[i]
     find_parent(i)
     dp[i] = sorted(init_l, reverse=True)
+
 N2 = int(sys.stdin.readline())
 for i in range(N2):
     num1, num2 = map(int, sys.stdin.readline().split(" "))

@@ -16,7 +16,6 @@ def solution():
         else:
             print("0\n")
 
-
 def check_palindrom(s,e):
     global l
     if(s>=e):
