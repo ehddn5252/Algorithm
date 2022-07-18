@@ -12,7 +12,7 @@ while q:
     if window == num:
         print(time)
         break
-        
+
     # 클립보드에 복사
     tmp = clipboard
     clipboard = window
