@@ -1,3 +1,13 @@
+"""
+요구 사항
+1. 연결된 컴퓨터 수 확인하기.
+
+방법
+1. visit 을 확인해서 queue 에 넣는다. -> DFS
+2.
+
+"""
+
 
 def solution(n, computers):
     visit = [0 for _ in range(n)]
