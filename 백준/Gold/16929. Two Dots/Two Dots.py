@@ -27,13 +27,13 @@ def dfs(input_i, input_j, level, start_i, start_j):
                 dfs(next_i, next_j, level + 1, start_i, start_j)
                 visit[next_i][next_j] = 0
 
-ans = "No"
 
+ans = "No"
 for i in range(N):
     for j in range(M):
         if ans == "Yes":
             break
         if visit[i][j] == 0:
-            visit[i][j] = 2  # start
+            visit[i][j]=1
             dfs(i, j, 0, i, j)
 print(ans)
