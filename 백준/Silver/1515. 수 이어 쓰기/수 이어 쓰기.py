@@ -1,7 +1,7 @@
 n = input()
 nums = ""
 check_ans = [0]
-for i in range(1, 100000):
+for i in range(1, 30000):
     nums += str(i)
     check_ans.append(len(str(i)))
 pointer = 0
