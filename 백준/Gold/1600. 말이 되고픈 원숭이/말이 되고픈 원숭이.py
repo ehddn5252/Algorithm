@@ -26,7 +26,7 @@ while q:
             next_y = horse_y[i] + y
             if next_x >= 0 and next_x < H and next_y >= 0 and next_y < W and not visit[next_x][next_y][horse-1]:
                 if l[next_x][next_y] != 1:
-                    visit[next_x][next_y][horse - 1]=True
+                    visit[next_x][next_y][horse - 1] = True
                     q.append((horse - 1, next_x, next_y, times + 1))
 
     for i in range(4):

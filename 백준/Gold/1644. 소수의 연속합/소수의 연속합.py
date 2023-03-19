@@ -44,8 +44,13 @@ while start <= end < len(prime):
                 sum_value -= prime[start]
                 start += 1
             elif sum_value < N:
+                if end + 1 == len(prime):
+                    print(count)
+                    exit(0)
+                end += 1
+                sum_value += prime[end]
                 break
-    if sum_value < N:
+    else:
         if end + 1 == len(prime):
             break
         end += 1
