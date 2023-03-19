@@ -1,0 +1,2 @@
+-- 코드를 입력하세요
+SELECT h2.owner,(abs(h1.X-h2.X)+abs(h1.Y-h2.Y)) AS "DISTANCE" from house_locations h1 join house_locations h2 where h1.owner = "Carlos" and h2.owner != "Carlos" order by -(abs(h1.X-h2.X)+abs(h1.Y-h2.Y)), h2.OWNER limit 1
