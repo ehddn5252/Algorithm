@@ -1,77 +1,54 @@
-#include<iostream>
-#include<vector>
-#include<queue>
-#include<list>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <queue>
+
 using namespace std;
 
-/*
-1 이면 익은 토마토 0은 익지 않은 토마토 -1 은 토마토가 없음
--> bfs 사용
+const int di[] = { 0, 0, -1, 1 };
+const int dj[] = { -1, 1, 0, 0 };
 
-*/
-
-
-
-
-int di[4] = {0,0,-1,1};
-int dj[4] = {-1,1,0,0};
 int main() {
-
-	int m,n;
-	cin >> m>>n;
-	int tmp;
-	vector<vector<int>> v;
-	queue<vector<int>> q;
-	// visit과 v 변수 초기화
-	vector<vector<bool>> visit(n, vector<bool>(m, false));
-
-	for (int i = 0; i < n; ++i) {
-		vector<int> tmpV;
-		for (int j = 0; j < m; ++j) {
-			cin >> tmp;
-			tmpV.push_back(tmp);
-			if (tmp == 1) {
-				visit[i][j] = true;
-				q.push({ 0,i, j });
-			}
-		}
-		v.push_back(tmpV);
-	}
-	int maxTime = 0;
-	// BFS 로직 부분
-	while (!q.empty()) {
-		vector<int> front =q.front();
-		int time = front[0];
-		int posI = front[1];
-		int posJ = front[2];
-		q.pop();
-		for (int i = 0; i < 4; ++i) {
-			int nextI = posI + di[i];
-			int nextJ = posJ + dj[i];
-
-			if (nextI >= n or nextI < 0 or nextJ >= m or nextJ < 0) continue;
-			if (visit[nextI][nextJ] != 0) continue;
-			if (visit[nextI][nextJ]) continue;
-			if (v[nextI][nextJ] == 0) {
-				visit[nextI][nextJ] = true;
-				q.push({ time + 1,nextI, nextJ });
-				maxTime = maxTime > time + 1 ? maxTime: time + 1;
-			}
-		}
-	}
-
-	// 익지 않은 토마토가 있는 지 확인
-	for (int i = 0; i < n; ++i) {
-		for (int j = 0; j < m; ++j) {
-			if (v[i][j] == 0 && visit[i][j] == false) {
-				maxTime = -1;
-				cout << maxTime;
-				return 0;
-			}
-		}
-	}
-	cout << maxTime;
-
-	return 0;
+    int m, n;
+    cin >> m >> n;
+    vector<vector<int>> v(n, vector<int>(m));
+    queue<pair<int, int>> q;
+    vector<vector<bool>> visit(n, vector<bool>(m, false));
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            cin >> v[i][j];
+            if (v[i][j] == 1) {
+                q.push({ i, j });
+                visit[i][j] = true;
+            }
+        }
+    }
+    int maxTime = 0;
+    while (!q.empty()) {
+        int qSize = q.size();
+        for (int i = 0; i < qSize; ++i) {
+            int posI = q.front().first;
+            int posJ = q.front().second;
+            q.pop();
+            for (int j = 0; j < 4; ++j) {
+                int nextI = posI + di[j];
+                int nextJ = posJ + dj[j];
+                if (nextI < 0 || nextI >= n || nextJ < 0 || nextJ >= m) continue;
+                if (v[nextI][nextJ] == -1 || visit[nextI][nextJ]) continue;
+                visit[nextI][nextJ] = true;
+                q.push({ nextI, nextJ });
+            }
+        }
+        if (!q.empty()) maxTime++;
+    }
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < m; ++j) {
+            if (v[i][j] == 0 && !visit[i][j]) {
+                maxTime = -1;
+                break;
+            }
+        }
+        if (maxTime == -1) break;
+    }
+    cout << maxTime;
+    return 0;
 }
