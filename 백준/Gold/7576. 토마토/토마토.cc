@@ -12,6 +12,8 @@ using namespace std;
 */
 
 
+
+
 int di[4] = {0,0,-1,1};
 int dj[4] = {-1,1,0,0};
 int main() {
@@ -20,15 +22,10 @@ int main() {
 	cin >> m>>n;
 	int tmp;
 	vector<vector<int>> v;
-	vector<vector<bool>>visit;
 	queue<vector<int>> q;
-	for (int i = 0; i < n; ++i) {
-		vector<bool> tmpV;
-		for (int j = 0; j < m; ++j) {
-			tmpV.push_back(false);
-		}
-		visit.push_back(tmpV);
-	}
+	// visit과 v 변수 초기화
+	vector<vector<bool>> visit(n, vector<bool>(m, false));
+
 	for (int i = 0; i < n; ++i) {
 		vector<int> tmpV;
 		for (int j = 0; j < m; ++j) {
@@ -42,7 +39,7 @@ int main() {
 		v.push_back(tmpV);
 	}
 	int maxTime = 0;
-
+	// BFS 로직 부분
 	while (!q.empty()) {
 		vector<int> front =q.front();
 		int time = front[0];
@@ -64,6 +61,7 @@ int main() {
 		}
 	}
 
+	// 익지 않은 토마토가 있는 지 확인
 	for (int i = 0; i < n; ++i) {
 		for (int j = 0; j < m; ++j) {
 			if (v[i][j] == 0 && visit[i][j] == false) {
